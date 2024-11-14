@@ -1,0 +1,37 @@
+//##Backend##//
+mkdir mern-crud-app
+cd mern-crud-app
+
+mkdir backend
+cd backend
+
+npm init -y
+npm install express mongoose cors body-parser
+npm install -D typescript @types/node @types/express @types/mongoose @types/cors
+
+npx tsc --init
+
+In tsconfig.json:
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  },
+  "include": ["src"]
+}
+
+npx tsc
+
+In package.json:
+"scripts": {
+  "build": "tsc",
+  "start": "node dist/server.js"
+}
+
+//##mern-crud-app##//
+npx create-react-app frontend --template typescript
+
+//##frontend##//
+npm install axios
